@@ -1,4 +1,4 @@
-# Youtube to Twittwe Bot
+# Youtube to Twitter Bot
 
 Bot to tweet how long has been since a youtuber published a video.
 
