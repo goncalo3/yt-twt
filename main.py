@@ -6,8 +6,8 @@ print("Program Started! \n")
 
 def execute():
     print("Its time, running program.")
-    channel_name = "Michael Reeves"
     channel_id = "UCtHaxi4GTYDpJgMSGy7AeSw"
+    channel_name = get_channel_name(channel_id=channel_id, youtube_api_key=YOUTUBE_API_KEY)
     videos = yt_retrive(channelId=channel_id, maxResults=2, API_KEY=YOUTUBE_API_KEY)
     days = days_ago(videos[0][1])
     print(f"Days ago: {days}")

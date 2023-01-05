@@ -5,6 +5,22 @@ import pickle
 from keys import *
 
 
+def get_channel_name(channel_id, youtube_api_key):
+    # build the YouTube API client
+    youtube_client = build("youtube", "v3", developerKey=youtube_api_key)
+
+    # Now, let's use the client to send a request to the YouTube API
+    request = youtube_client.channels().list(
+        part="snippet",
+        id=channel_id
+    )
+    response = request.execute()
+
+    # extract the channel name from the response
+    channel_name = response["items"][0]["snippet"]["title"]
+    return channel_name
+
+
 def days_ago(date):
     # Convert the date to a datetime object
     date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
